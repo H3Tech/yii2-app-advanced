@@ -17,7 +17,7 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
-            str_replace('/frontend/web', '', (new Request())->getBaseUrl()),
+            'baseUrl' => str_replace('/frontend/web', '', (new Request())->getBaseUrl()),
         ],
         'user' => [
             'identityClass' => 'common\models\User',
