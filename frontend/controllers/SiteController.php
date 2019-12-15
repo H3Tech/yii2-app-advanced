@@ -226,11 +226,9 @@ class SiteController extends Controller
         } catch (InvalidArgumentException $e) {
             throw new BadRequestHttpException($e->getMessage());
         }
-        if ($user = $model->verifyEmail()) {
-            if (Yii::$app->user->login($user)) {
-                Yii::$app->session->setFlash('success', 'Your email has been confirmed!');
-                return $this->goHome();
-            }
+        if ($user = $model->verifyEmail() && Yii::$app->user->login($user)) {
+            Yii::$app->session->setFlash('success', 'Your email has been confirmed!');
+            return $this->goHome();
         }
 
         Yii::$app->session->setFlash('error', 'Sorry, we are unable to verify your account with provided token.');
