@@ -58,3 +58,16 @@ frontend
 vendor/                  contains dependent 3rd-party packages
 environments/            contains environment-based overrides
 ```
+
+ENHANCEMENTS
+------------
+
+The project template has the following changes compared to the default Yii template:
+- Enabled pretty URLs
+- Updated web configuration for compatibility with public hosting servers where the document root cannot be set to the /web folders
+  - Added .htaccess file to provide a good default configuration for Apache
+  - Removed `/frontend/web` in the case of frontend, and `/web` in the case of backend from the base URL
+- Updated several files of the template (e.g. main index.php files for all environments) to conform various code quality rules without changing the behavior of the code
+- Updated configuration of migration controller to save migration files in UpperCamelCase to unify class file names
+- Removed default migrations as we never use them in newly created projects
+  - Updated the init script to create the default migration folder if it does not exist
