@@ -85,8 +85,6 @@ foreach ($callbacks as $callback) {
     }
 }
 
-@mkdir($root . '/console/migrations', 0777, true);
-
 echo "\n  ... initialization completed.\n\n";
 
 function getFileList($root, $basePath = '')
