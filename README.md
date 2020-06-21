@@ -59,7 +59,7 @@ vendor/                  contains dependent 3rd-party packages
 environments/            contains environment-based overrides
 ```
 
-ENHANCEMENTS
+ENHANCEMENTS AND OTHER CHANGES
 ------------
 
 The project template has the following changes compared to the default Yii template:
@@ -72,3 +72,4 @@ The project template has the following changes compared to the default Yii templ
 - Removed default migrations as we never use them in newly created projects
   - Updated the init script to create the default migration folder if it does not exist
 - Removed default tests
+- Changed minimum stability to stable in composer.json
